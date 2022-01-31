@@ -5,7 +5,7 @@ import DateSelector from './components/DateSelector';
 const App = () => {
   return (
     <div>
-      Hello World!
+      Covid Tracker
       <DateSelector />
       <CountryList />
     </div>

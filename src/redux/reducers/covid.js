@@ -5,14 +5,11 @@ const initialState = {};
 const covidSlice = createSlice({
   name: 'covid',
   initialState,
-  reducers: {
-    add(state) {
-      state;
-    },
-  },
+  reducers: {},
   extraReducers: {},
 });
 
 export default covidSlice.reducer;
+console.log(covidSlice.reducer);
 
-export const { add } = covidSlice.actions;
+// export const { add } = covidSlice.actions;

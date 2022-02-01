@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { storeDate } from '../redux/reducers/covidData';
 
 const getToday = () => {
   const t = new Date();
@@ -13,11 +15,17 @@ const DateSelector = () => {
   const [endingDate, setEndingDate] = useState(getToday());
   const [hasEndingDate, setHasEndindDate] = useState(false);
 
+  const dispatch = useDispatch();
+
   const handleBlur = () => {
-    console.log('onBlur');
-    console.log(startingDate);
-    console.log(endingDate);
-    console.log(hasEndingDate);
+    const dateInfo = {
+      isRange: hasEndingDate,
+      dates: {
+        start: startingDate,
+        end: endingDate,
+      },
+    };
+    dispatch(storeDate(dateInfo));
   };
 
   return (

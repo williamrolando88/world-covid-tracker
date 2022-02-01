@@ -1,13 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {};
+const initialState = {
+  isRange: false,
+  dates: {},
+  country: '',
+  results: {},
+};
 
 const covidDataSlice = createSlice({
   name: 'covidData',
   initialState,
   reducers: {
     storeDate: (state, action) => {
-      console.log(action.payload);
+      return { ...state, ...action.payload };
     },
   },
 });

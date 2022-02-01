@@ -8,6 +8,10 @@ const CountryList = () => {
 
   const { status, countries } = useSelector((store) => store.countries);
 
+  const handleShowData = (id) => {
+    console.log('id', id);
+  };
+
   switch (status) {
     case 'pending':
       return <div>Fetching data...</div>;
@@ -15,7 +19,11 @@ const CountryList = () => {
       return (
         <div className="flex flex-col">
           {countries.map((country) => (
-            <Country key={country.id} country={country} />
+            <Country
+              key={country.id}
+              country={country}
+              onShowData={handleShowData}
+            />
           ))}
         </div>
       );

@@ -5,8 +5,12 @@ const DateSelector = () => {
   const [endingDate, setEndingDate] = useState(new Date());
   const [hasEndindDate, setHasEndindDate] = useState(false);
 
+  const handleBlur = () => {
+    console.log('onBlur');
+  };
+
   return (
-    <div>
+    <div onBlur={handleBlur}>
       <fieldset onChange={(e) => setHasEndindDate(e.target.value === 'range')}>
         <div>
           <input

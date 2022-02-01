@@ -1,17 +1,23 @@
 import React from 'react';
-import Region from './Region';
-import { ChevronDownIcon } from '@heroicons/react/solid';
+import { ChevronRightIcon } from '@heroicons/react/solid';
 
 const Country = (props) => {
-  const { id, name } = props.country;
+  const {
+    country: { id, name },
+    onShowData,
+  } = props;
 
   return (
-    <div className="flex items-center px-2 py-1 gap-2">
-      <button className="h-6 w-6 border rounded-full">
-        <ChevronDownIcon />
-      </button>
-      <h2>{name}</h2>
-      <Region />
+    <div>
+      <div className="flex items-center justify-between gap-2 px-2 py-1">
+        <h2 className="">{name}</h2>
+        <button
+          onClick={() => onShowData(id)}
+          className="flex items-center rounded-sm border text-xs">
+          <p>Show Data</p>
+          <ChevronRightIcon className="h-5 w-5" />
+        </button>
+      </div>
     </div>
   );
 };

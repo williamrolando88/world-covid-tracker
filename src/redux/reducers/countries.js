@@ -6,14 +6,12 @@ const baseURL = 'https://api.covid19tracking.narrativa.com/api';
 
 export const fetchCountries = createAsyncThunk('fetchCountries', async () => {
   const response = await fetch(`${baseURL}/countries`, { method: 'GET' });
-  const data = response.json();
-  return data;
+  return response.json();
 });
 
 const countriesSlice = createSlice({
   name: 'countries',
   initialState,
-  reducers: {},
   extraReducers: {
     [fetchCountries.rejected]: () => {
       return { status: 'rejected' };
@@ -25,7 +23,6 @@ const countriesSlice = createSlice({
       const sortedCountries = action.payload.countries.sort((a, b) =>
         a.name.localeCompare(b.name),
       );
-      console.log(sortedCountries);
       return { status: 'fulfilled', countries: sortedCountries };
     },
   },

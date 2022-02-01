@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 
+const getToday = () => {
+  const t = new Date();
+  const day = t.getDate();
+  const month = t.getMonth() + 1;
+  const year = t.getFullYear();
+  return month > 10 ? `${year}-0${month}-${day}` : `${year}-${month}-${day}`;
+};
+
 const DateSelector = () => {
-  const [startingDate, setStartingDate] = useState(new Date());
-  const [endingDate, setEndingDate] = useState(new Date());
-  const [hasEndindDate, setHasEndindDate] = useState(false);
+  const [startingDate, setStartingDate] = useState(getToday());
+  const [endingDate, setEndingDate] = useState(getToday());
+  const [hasEndingDate, setHasEndindDate] = useState(false);
 
   const handleBlur = () => {
     console.log('onBlur');
+    console.log(startingDate);
+    console.log(endingDate);
+    console.log(hasEndingDate);
   };
 
   return (
@@ -30,16 +41,17 @@ const DateSelector = () => {
       <div>
         <div>
           <label htmlFor="startingDate">
-            {hasEndindDate ? 'From:' : 'Date:'}
+            {hasEndingDate ? 'From:' : 'Date:'}
           </label>
           <input
             type="date"
             name="startingDate"
             value={startingDate}
             onChange={(e) => setStartingDate(e.target.value)}
+            required
           />
         </div>
-        {hasEndindDate && (
+        {hasEndingDate && (
           <div>
             <label htmlFor="endingDate">To:</label>
             <input
@@ -47,6 +59,7 @@ const DateSelector = () => {
               name="endingDate"
               value={endingDate}
               onChange={(e) => setEndingDate(e.target.value)}
+              required
             />
           </div>
         )}

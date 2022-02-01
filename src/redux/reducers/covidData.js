@@ -11,9 +11,7 @@ const covidDataSlice = createSlice({
   name: 'covidData',
   initialState,
   reducers: {
-    storeDate: (state, action) => {
-      return { ...state, ...action.payload };
-    },
+    storeDate: (state, action) => ({ ...state, ...action.payload }),
   },
 });
 

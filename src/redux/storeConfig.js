@@ -1,10 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import countriesReducer from './reducers/countries';
 import covidDataReducer from './reducers/covidData';
 
 const reducer = {
-  countries: countriesReducer,
   covidData: covidDataReducer,
 };
 

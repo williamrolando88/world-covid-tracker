@@ -13,16 +13,10 @@ const countriesSlice = createSlice({
   name: 'countries',
   initialState,
   extraReducers: {
-    [fetchCountries.rejected]: () => {
-      return { status: 'rejected' };
-    },
-    [fetchCountries.pending]: () => {
-      return { status: 'pending' };
-    },
+    [fetchCountries.rejected]: () => ({ status: 'rejected' }),
+    [fetchCountries.pending]: () => ({ status: 'pending' }),
     [fetchCountries.fulfilled]: (state, action) => {
-      const sortedCountries = action.payload.countries.sort((a, b) =>
-        a.name.localeCompare(b.name),
-      );
+      const sortedCountries = action.payload.countries.sort((a, b) => a.name.localeCompare(b.name));
       return { status: 'fulfilled', countries: sortedCountries };
     },
   },

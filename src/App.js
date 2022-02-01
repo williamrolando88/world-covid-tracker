@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import CountryList from './components/CountryList';
-import DateSelector from './components/DateSelector';
+import Details from './components/Details';
+import HomePage from './components/HomePage';
 import { fetchCountries } from './redux/reducers/countries';
 
 const App = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchCountries());
-    return () => {
-      // unmounting
-    };
-  }, []);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(fetchCountries());
+  //   return () => {
+  //     // unmounting
+  //   };
+  // }, []);
+
   return (
     <div>
-      Covid Tracker
-      <DateSelector />
-      <CountryList />
+      <HomePage />
+      {/* <Details /> */}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronRightIcon } from '@heroicons/react/solid';
+import PropTypes from 'prop-types';
 
 const Country = (props) => {
   const {
@@ -20,6 +21,11 @@ const Country = (props) => {
       </div>
     </div>
   );
+};
+
+Country.propTypes = {
+  country: PropTypes.instanceOf(Object).isRequired,
+  onShowData: PropTypes.func.isRequired,
 };
 
 export default Country;

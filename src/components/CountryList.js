@@ -7,9 +7,15 @@ const CountryList = () => {
   const dispatch = useDispatch();
 
   const { status, countries } = useSelector((store) => store.countries);
+  const {
+    isRange,
+    dates: { start, end },
+  } = useSelector((store) => store.covidData);
 
   const handleShowData = (id) => {
     console.log('id', id);
+    console.log(isRange);
+    console.log(start, end);
   };
 
   switch (status) {

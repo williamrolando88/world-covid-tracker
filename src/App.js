@@ -1,23 +1,25 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import CountryList from './components/CountryList';
-import DateSelector from './components/DateSelector';
-import { fetchCountries } from './redux/reducers/countries';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import TodayDetails from './components/TodayDetails';
+import getToday from './functions/getToday';
+import { fetchToday } from './redux/reducers/covidData';
 
 const App = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(fetchCountries());
-    return () => {
-      // unmounting
-    };
+    dispatch(fetchToday(getToday()));
   }, []);
+
   return (
-    <div>
-      Covid Tracker
-      <DateSelector />
-      <CountryList />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/today/:country" element={<TodayDetails />} />
+      </Routes>
+    </>
   );
 };
 

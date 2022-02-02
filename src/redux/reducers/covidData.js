@@ -58,7 +58,6 @@ const covidDataSlice = createSlice({
       state.countrySingleDay.status = 'pending';
     },
     [fetchCountryDay.fulfilled]: (state, action) => {
-      // console.log(action.payload.dates[state.date].countries[state.country]);
       state.countrySingleDay.status = 'fulfilled';
       state.countrySingleDay.data =
         action.payload.dates[state.date].countries[state.country];

@@ -1,24 +1,18 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import getToday from '../functions/getToday';
-import { fetchToday } from '../redux/reducers/covidData';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Country from './Country';
 
 const HomePage = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchToday(getToday()));
-  }, []);
-
   const { status, countries } = useSelector((store) => store.covidData.today);
 
-  let worldTotal = 0;
+  let worldStats = {
+    todayConfirmed: 0,
+  };
 
   if (status === 'fulfilled') {
     Object.keys(countries).map((key) => {
       // todo: Here I can add mutating code to add world totals
-      worldTotal += countries[key].today_confirmed;
+      worldStats.todayConfirmed += countries[key].today_confirmed;
     });
   }
 
@@ -29,7 +23,9 @@ const HomePage = () => {
         <div>
           <h2>Today World</h2>
           <h3>
-            {`Total infections ${new Intl.NumberFormat().format(worldTotal)}`}
+            {`Total infections ${new Intl.NumberFormat().format(
+              worldStats.todayConfirmed,
+            )}`}
           </h3>
         </div>
       </div>

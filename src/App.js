@@ -1,21 +1,16 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
-import getToday from './functions/getToday';
-import { fetchToday } from './redux/reducers/covidData';
+import TodayDetails from './components/TodayDetails';
 
 const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchToday(getToday()));
-  }, []);
-
   return (
-    <div>
-      <HomePage />
-      {/* <Details /> */}
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/today/:country" element={<TodayDetails />} />
+      </Routes>
+    </>
   );
 };
 

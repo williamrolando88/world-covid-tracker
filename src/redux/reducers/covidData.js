@@ -1,23 +1,44 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
 
+// *Constants
+const baseURL = 'https://api.covid19tracking.narrativa.com';
 const initialState = {
   today: { status: '', countries: {} },
+  countrySingleDay: { status: '', data: {} },
+  date: '',
+  country: '',
 };
 
-const baseURL = 'https://api.covid19tracking.narrativa.com';
-
+// *Async actions
+// Fetch today data
 export const fetchToday = createAsyncThunk('fetchToday', async (today) => {
-  const response = await fetch(`${baseURL}/api/${today}`, { method: 'GET' });
+  const URL = `${baseURL}/api/${today}`;
+  const response = await fetch(URL, { method: 'GET' });
   return response.json();
 });
 
+// Fetch today's country data
+export const fetchCountryDay = createAsyncThunk(
+  'fetchDay/country',
+  async ({ countryId, date }) => {
+    const URL = `${baseURL}/api/${date}/country/${countryId}`;
+    const response = await fetch(URL, { method: 'GET' });
+    return response.json();
+  },
+);
+
+// *Redux Slice
 const covidDataSlice = createSlice({
   name: 'covidData',
   initialState,
   reducers: {
-    storeDate: (state, action) => ({ ...state, ...action.payload }),
+    storeCountryDay(state, action) {
+      state.country = action.payload.country;
+      state.date = action.payload.date;
+    },
   },
   extraReducers: {
+    // Fetch today's world's data
     [fetchToday.rejected]: (state) => {
       state.today.status = 'rejected';
     },
@@ -25,23 +46,26 @@ const covidDataSlice = createSlice({
       state.today.status = 'pending';
     },
     [fetchToday.fulfilled]: (state, action) => {
-      // console.log(action.payload);
-      // console.log(action.payload.dates);
-      // console.log(action.payload.dates[action.meta.arg]);
-      // console.log(action.payload.dates[action.meta.arg].countries);
-      // // const sortedCountries = action.payload.countries.sort((a, b) =>
-      // //   a.name.localeCompare(b.name),
-      // // );
-      return {
-        today: {
-          status: 'fulfilled',
-          countries: action.payload.dates[action.meta.arg].countries,
-        },
-      };
+      state.today.status = 'fulfilled';
+      state.today.countries = action.payload.dates[action.meta.arg].countries;
+    },
+    // Fetch data by country by day
+    [fetchCountryDay.rejected]: (state) => {
+      current(state);
+      state.countrySingleDay.status = 'rejected';
+    },
+    [fetchCountryDay.pending]: (state) => {
+      state.countrySingleDay.status = 'pending';
+    },
+    [fetchCountryDay.fulfilled]: (state, action) => {
+      // console.log(action.payload.dates[state.date].countries[state.country]);
+      state.countrySingleDay.status = 'fulfilled';
+      state.countrySingleDay.data =
+        action.payload.dates[state.date].countries[state.country];
     },
   },
 });
 
 export default covidDataSlice.reducer;
 
-export const { storeDate } = covidDataSlice.actions;
+export const { storeCountryDay } = covidDataSlice.actions;

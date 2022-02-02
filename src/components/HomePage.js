@@ -48,7 +48,7 @@ const HomePage = () => {
       <p className="font-gill-sans bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] py-1 text-center text-sm  uppercase text-white">
         Stats by country
       </p>
-      <main className="font-lato grid grid-cols-2">
+      <main className="font-lato grid grid-cols-2 bg-[#24243e]">
         {Object.keys(countries).map((key, index) => (
           <Country
             key={countries[key].id}

@@ -81,9 +81,9 @@ const TodayDetails = () => {
         </div>
       </div>
     </div>
-  ) : status === 'rejected' ? (
+  ) : (
     <div>Internal error</div>
-  ) : null;
+  );
 };
 
 export default TodayDetails;

@@ -22,7 +22,7 @@ const HomePage = () => {
   ) : status === 'fulfilled' ? (
     <>
       {/* Navbar */}
-      <nav className="font-gill-sans from flex items-center justify-between bg-gradient-to-b from-[#0f0c29] via-[#302b63]  to-[#24243e] px-2 py-2 text-white">
+      <nav className="font-gill-sans flex items-center justify-between bg-gradient-to-b from-[#0f0c29] via-[#302b63]  to-[#24243e] px-2 py-2 text-white">
         <button className="rounded-md border py-1 px-2 uppercase">Home</button>
         <h1 className="text-lg uppercase">Covid Tracker</h1>
         <div className="flex items-center gap-2">
@@ -45,9 +45,11 @@ const HomePage = () => {
           </h3>
         </div>
       </section>
+      {/* Separator */}
       <p className="font-gill-sans bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] py-1 text-center text-sm  uppercase text-white">
         Stats by country
       </p>
+      {/* Countries container */}
       <main className="font-lato grid grid-cols-2 bg-[#24243e]">
         {Object.keys(countries).map((key, index) => (
           <Country

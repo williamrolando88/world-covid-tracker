@@ -59,8 +59,7 @@ const covidDataSlice = createSlice({
     },
     [fetchCountryDay.fulfilled]: (state, action) => {
       state.countrySingleDay.status = 'fulfilled';
-      state.countrySingleDay.data =
-        action.payload.dates[state.date].countries[state.country];
+      state.countrySingleDay.data = action.payload.dates[state.date].countries[state.country];
     },
   },
 });

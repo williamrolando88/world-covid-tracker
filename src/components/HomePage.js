@@ -10,12 +10,14 @@ const HomePage = () => {
     todayConfirmed: 0,
   };
 
+  /* eslint-disable */
   if (status === 'fulfilled') {
     Object.keys(countries).map((key) => {
       // todo: Here I can add mutating code to add world totals
       worldStats.todayConfirmed += countries[key].today_confirmed;
     });
   }
+  /* eslint-enable */
 
   return status === 'pending' ? (
     <div>Loading...</div>
@@ -23,7 +25,9 @@ const HomePage = () => {
     <>
       {/* Navbar */}
       <nav className="font-gill-sans flex items-center justify-between bg-gradient-to-b from-[#0f0c29] via-[#302b63]  to-[#24243e] px-2 py-2 text-white">
-        <button className="rounded-md border py-1 px-2 uppercase">Home</button>
+        <button type="button" className="rounded-md border py-1 px-2 uppercase">
+          Home
+        </button>
         <h1 className="text-lg uppercase">Covid Tracker</h1>
         <div className="flex items-center gap-2">
           <button className="h-6 w-6" type="button">

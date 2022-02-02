@@ -14,9 +14,7 @@ const TodayDetails = () => {
     return <Navigate to="/" />;
   }
 
-  const formatNumber = (number) => {
-    return new Intl.NumberFormat().format(number);
-  };
+  const formatNumber = (number) => new Intl.NumberFormat().format(number);
 
   const totalStats = {
     Confirmed: { value: 0 },
@@ -43,8 +41,10 @@ const TodayDetails = () => {
       {/* Navbar */}
       <nav className="font-gill-sans flex items-center justify-between bg-gradient-to-b from-[#0f0c29] via-[#302b63]  to-[#24243e] px-2 py-2 text-white">
         <button
+          type="button"
           className="flex items-center rounded-md border py-1 px-2 uppercase"
-          onClick={() => navigate(-1)}>
+          onClick={() => navigate(-1)}
+        >
           <ArrowCircleLeftIcon className="h-6 w-6" />
           <span>BACK</span>
         </button>
@@ -88,29 +88,25 @@ const TodayDetails = () => {
         {/* Growing rate */}
         <div className="grid grid-cols-2">
           <div className="bg-[url(./assets/total.webp)] bg-contain bg-center bg-no-repeat">
-            <div
-              className={`flex h-36 flex-col items-stretch justify-center bg-[#302b63]/80`}>
+            <div className="flex h-36 flex-col items-stretch justify-center bg-[#302b63]/80">
               <h3>Total New Confirmed</h3>
               <h4>{formatNumber(data.today_new_confirmed)}</h4>
             </div>
           </div>
           <div className="bg-[url(./assets/recovered.webp)] bg-contain bg-center bg-no-repeat">
-            <div
-              className={`flex h-36 flex-col items-stretch justify-center bg-[#24243e]/80`}>
+            <div className="flex h-36 flex-col items-stretch justify-center bg-[#24243e]/80">
               <h3>Total New Recovered</h3>
               <h4>{formatNumber(data.today_new_recovered)}</h4>
             </div>
           </div>
           <div className="bg-[url(./assets/confirmed.webp)] bg-contain bg-center bg-no-repeat">
-            <div
-              className={`flex h-36 flex-col items-stretch justify-center bg-[#24243e]/80`}>
+            <div className="flex h-36 flex-col items-stretch justify-center bg-[#24243e]/80">
               <h3>Total New Open Cases</h3>
               <h4>{formatNumber(data.today_new_open_cases)}</h4>
             </div>
           </div>
           <div className="bg-[url(./assets/dead.webp)] bg-contain bg-center bg-no-repeat">
-            <div
-              className={`flex h-36 flex-col items-stretch justify-center bg-[#302b63]/80`}>
+            <div className="flex h-36 flex-col items-stretch justify-center bg-[#302b63]/80">
               <h3>Total New Deaths</h3>
               <h4>{formatNumber(data.today_new_deaths)}</h4>
             </div>

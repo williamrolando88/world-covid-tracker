@@ -16,7 +16,9 @@ const HomePage = () => {
     });
   }
 
-  return (
+  return status === 'pending' ? (
+    <div>Loading...</div>
+  ) : status === 'fulfilled' ? (
     <div>
       <div>
         <h1>Covid Tracker</h1>
@@ -30,18 +32,13 @@ const HomePage = () => {
         </div>
       </div>
       <div>
-        {status === 'rejected' && 'Internal error'}
-        {status === 'pending' && 'Fetching data'}
-        {status === 'fulfilled' &&
-          Object.keys(countries).map((key) => (
-            <Country
-              key={countries[key].id}
-              id={key}
-              country={countries[key]}
-            />
-          ))}
+        {Object.keys(countries).map((key) => (
+          <Country key={countries[key].id} id={key} country={countries[key]} />
+        ))}
       </div>
     </div>
+  ) : (
+    <div>Conection error</div>
   );
 };
 

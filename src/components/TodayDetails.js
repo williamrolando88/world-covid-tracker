@@ -1,13 +1,17 @@
 import { ArrowCircleLeftIcon } from '@heroicons/react/outline';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const TodayDetails = () => {
   const navigate = useNavigate();
   const { status, data } = useSelector(
     (store) => store.covidData.countrySingleDay,
   );
+
+  if (!status) {
+    return <Navigate to="/" />;
+  }
 
   console.log('status', status);
   if (status === 'fulfilled') {

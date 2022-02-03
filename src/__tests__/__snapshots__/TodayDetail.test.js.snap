@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render should render TodayDetails 1`] = `
+<div
+  className="h-screen bg-[#24243e]"
+>
+  <nav
+    className="font-gill-sans flex items-center justify-between bg-gradient-to-b from-[#0f0c29] via-[#302b63]  to-[#24243e] px-2 py-2 text-white"
+  >
+    <button
+      className="flex items-center rounded-md border py-1 px-2 uppercase"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        className="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+        />
+      </svg>
+      <span>
+        BACK
+      </span>
+    </button>
+    <h1
+      className="text-lg capitalize"
+    >
+      Country details
+    </h1>
+    <div
+      className="flex items-center gap-2"
+    >
+      <button
+        className="h-6 w-6"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+      <button
+        className="h-6 w-6"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <article
+    className="font-lato flex flex-col items-stretch text-center text-slate-100"
+  >
+    <section
+      className="h-48 w-screen bg-[url(./assets/covid.jpg)] bg-cover bg-center bg-no-repeat text-white"
+    >
+      <div
+        className="flex h-full flex-col items-center bg-black/60"
+      >
+        <div
+          className="grid grow content-center"
+        >
+          <h2
+            className="font-gill-sans text-center text-2xl"
+          />
+        </div>
+        <p
+          className="m-1 self-end text-xs"
+        >
+          Source: undefined
+        </p>
+      </div>
+    </section>
+    <p
+      className="font-gill-sans bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] py-1 text-center text-sm  uppercase"
+    >
+      Today's data (undefined)
+    </p>
+    <div
+      className="flex justify-evenly bg-[#302b63] py-2"
+    >
+      <div
+        className="flex flex-col"
+      >
+        <h4>
+          1.000
+        </h4>
+        <h3
+          className="font-gill-sans text-xs capitalize"
+        >
+          Total
+                Confirmed
+        </h3>
+      </div>
+      <div
+        className="flex flex-col"
+      >
+        <h4>
+          2.000
+        </h4>
+        <h3
+          className="font-gill-sans text-xs capitalize"
+        >
+          Total
+                Recovered
+        </h3>
+      </div>
+      <div
+        className="flex flex-col"
+      >
+        <h4>
+          3.000
+        </h4>
+        <h3
+          className="font-gill-sans text-xs capitalize"
+        >
+          Total
+                Open Cases
+        </h3>
+      </div>
+      <div
+        className="flex flex-col"
+      >
+        <h4>
+          4.000
+        </h4>
+        <h3
+          className="font-gill-sans text-xs capitalize"
+        >
+          Total
+                Deaths
+        </h3>
+      </div>
+    </div>
+    <div
+      className="grid grid-cols-2"
+    >
+      <div
+        className="bg-[url(./assets/total.webp)] bg-contain bg-center bg-no-repeat"
+      >
+        <div
+          className="flex h-36 flex-col items-stretch justify-center bg-[#302b63]/80"
+        >
+          <h3>
+            Total New Confirmed
+          </h3>
+          <h4>
+            NaN
+          </h4>
+        </div>
+      </div>
+      <div
+        className="bg-[url(./assets/recovered.webp)] bg-contain bg-center bg-no-repeat"
+      >
+        <div
+          className="flex h-36 flex-col items-stretch justify-center bg-[#24243e]/80"
+        >
+          <h3>
+            Total New Recovered
+          </h3>
+          <h4>
+            NaN
+          </h4>
+        </div>
+      </div>
+      <div
+        className="bg-[url(./assets/confirmed.webp)] bg-contain bg-center bg-no-repeat"
+      >
+        <div
+          className="flex h-36 flex-col items-stretch justify-center bg-[#24243e]/80"
+        >
+          <h3>
+            Total New Open Cases
+          </h3>
+          <h4>
+            NaN
+          </h4>
+        </div>
+      </div>
+      <div
+        className="bg-[url(./assets/dead.webp)] bg-contain bg-center bg-no-repeat"
+      >
+        <div
+          className="flex h-36 flex-col items-stretch justify-center bg-[#302b63]/80"
+        >
+          <h3>
+            Total New Deaths
+          </h3>
+          <h4>
+            NaN
+          </h4>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check app snapshot should renderApp 1`] = `
+<div
+  className="fixed top-0 left-0 flex h-screen w-screen flex-col items-center justify-center  bg-[#302b63] text-stone-200"
+>
+  <img
+    alt="Loading-icon"
+    className="h-24 w-24 animate-spin invert"
+    height="100"
+    src="loading.svg"
+    width="100"
+  />
+  <h2
+    className="font-lato text-3xl font-bold"
+  >
+    Loading Data
+  </h2>
+</div>
+`;

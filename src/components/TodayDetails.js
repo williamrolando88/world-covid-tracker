@@ -30,10 +30,6 @@ const TodayDetails = () => {
     totalStats.Recovered.value = data.today_recovered;
     totalStats['Open Cases'].value = data.today_open_cases;
     totalStats.Deaths.value = data.today_deaths;
-    // totalNew['New Confirmed'].value = data.today_new_confirmed;
-    // totalNew['New Recovered'].value = data.today_new_recovered;
-    // totalNew['New Open Cases'].value = data.today_new_open_cases;
-    // totalNew['New Deaths'].value = data.today_new_deaths;
   }
 
   return status === 'pending' ? (
@@ -45,8 +41,7 @@ const TodayDetails = () => {
         <button
           type="button"
           className="flex items-center rounded-md border py-1 px-2 uppercase"
-          onClick={() => navigate(-1)}
-        >
+          onClick={() => navigate(-1)}>
           <ArrowCircleLeftIcon className="h-6 w-6" />
           <span>BACK</span>
         </button>

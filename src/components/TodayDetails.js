@@ -3,6 +3,7 @@ import { MenuIcon, MicrophoneIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useNavigate } from 'react-router-dom';
+import ErrorScreen from './ErrorScreen';
 import LoadingScreen from './LoadingScreen';
 
 const TodayDetails = () => {
@@ -115,7 +116,7 @@ const TodayDetails = () => {
       </article>
     </div>
   ) : (
-    <div>Internal error</div>
+    <ErrorScreen />
   );
 };
 

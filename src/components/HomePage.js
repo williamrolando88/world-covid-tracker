@@ -2,6 +2,7 @@ import { MicrophoneIcon, MenuIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Country from './Country';
+import ErrorScreen from './ErrorScreen';
 import LoadingScreen from './LoadingScreen';
 
 const HomePage = () => {
@@ -67,7 +68,7 @@ const HomePage = () => {
       </main>
     </>
   ) : (
-    <div>Conection error</div>
+    <ErrorScreen />
   );
 };
 

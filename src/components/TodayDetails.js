@@ -3,6 +3,7 @@ import { MenuIcon, MicrophoneIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useNavigate } from 'react-router-dom';
+import LoadingScreen from './LoadingScreen';
 
 const TodayDetails = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const TodayDetails = () => {
   }
 
   return status === 'pending' ? (
-    <div>Fetching...</div>
+    <LoadingScreen />
   ) : status === 'fulfilled' ? (
     <div className="h-screen bg-[#24243e]">
       {/* Navbar */}
@@ -43,8 +44,7 @@ const TodayDetails = () => {
         <button
           type="button"
           className="flex items-center rounded-md border py-1 px-2 uppercase"
-          onClick={() => navigate(-1)}
-        >
+          onClick={() => navigate(-1)}>
           <ArrowCircleLeftIcon className="h-6 w-6" />
           <span>BACK</span>
         </button>

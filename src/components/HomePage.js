@@ -2,6 +2,7 @@ import { MicrophoneIcon, MenuIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Country from './Country';
+import LoadingScreen from './LoadingScreen';
 
 const HomePage = () => {
   const { status, countries } = useSelector((store) => store.covidData.today);
@@ -20,7 +21,7 @@ const HomePage = () => {
   /* eslint-enable */
 
   return status === 'pending' ? (
-    <div>Loading...</div>
+    <LoadingScreen />
   ) : status === 'fulfilled' ? (
     <>
       {/* Navbar */}

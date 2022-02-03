@@ -30,10 +30,6 @@ const TodayDetails = () => {
     totalStats.Recovered.value = data.today_recovered;
     totalStats['Open Cases'].value = data.today_open_cases;
     totalStats.Deaths.value = data.today_deaths;
-    // totalNew['New Confirmed'].value = data.today_new_confirmed;
-    // totalNew['New Recovered'].value = data.today_new_recovered;
-    // totalNew['New Open Cases'].value = data.today_new_open_cases;
-    // totalNew['New Deaths'].value = data.today_new_deaths;
   }
 
   return status === 'pending' ? (

@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check app snapshot should renderApp 1`] = `
+Array [
+  <nav
+    className="font-gill-sans flex items-center justify-between bg-gradient-to-b from-[#0f0c29] via-[#302b63]  to-[#24243e] px-2 py-2 text-white"
+  >
+    <button
+      className="rounded-md border py-1 px-2 uppercase"
+      type="button"
+    >
+      Home
+    </button>
+    <h1
+      className="text-lg uppercase"
+    >
+      Covid Tracker
+    </h1>
+    <div
+      className="flex items-center gap-2"
+    >
+      <button
+        className="h-6 w-6"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+      <button
+        className="h-6 w-6"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clipRule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </nav>,
+  <section
+    className="h-48 w-screen bg-[url(./assets/covid.jpg)] bg-cover bg-center bg-no-repeat text-white"
+  >
+    <div
+      className="flex h-full flex-col items-center justify-center gap-4 bg-black/60"
+    >
+      <h2
+        className="font-gill-sans text-2xl"
+      >
+        World Stats
+      </h2>
+      <h3
+        className="font-lato text-sm"
+      >
+        Total infections: 60.000
+      </h3>
+    </div>
+  </section>,
+  <p
+    className="font-gill-sans bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] py-1 text-center text-sm  uppercase text-white"
+  >
+    Stats by country
+  </p>,
+  <main
+    className="font-lato grid grid-cols-2 bg-[#24243e]"
+  >
+    <div
+      className="bg-[#24243e] "
+    >
+      <div
+        className="flex h-32 flex-col items-center justify-between p-2 text-slate-200"
+      >
+        <a
+          className="self-end rounded-full border border-gray-600"
+          href="/today/undefined"
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden="true"
+            className="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clipRule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </a>
+        <h2
+          className="font-gill-sans text-center text-lg"
+        />
+        <h3
+          className="self-end text-xs"
+        >
+          10.000
+        </h3>
+      </div>
+    </div>
+    <div
+      className="bg-[#302b63] "
+    >
+      <div
+        className="flex h-32 flex-col items-center justify-between p-2 text-slate-200"
+      >
+        <a
+          className="self-end rounded-full border border-gray-600"
+          href="/today/undefined"
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden="true"
+            className="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clipRule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </a>
+        <h2
+          className="font-gill-sans text-center text-lg"
+        />
+        <h3
+          className="self-end text-xs"
+        >
+          20.000
+        </h3>
+      </div>
+    </div>
+    <div
+      className="bg-[#302b63] "
+    >
+      <div
+        className="flex h-32 flex-col items-center justify-between p-2 text-slate-200"
+      >
+        <a
+          className="self-end rounded-full border border-gray-600"
+          href="/today/undefined"
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden="true"
+            className="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clipRule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </a>
+        <h2
+          className="font-gill-sans text-center text-lg"
+        />
+        <h3
+          className="self-end text-xs"
+        >
+          30.000
+        </h3>
+      </div>
+    </div>
+  </main>,
+]
+`;

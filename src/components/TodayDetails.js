@@ -45,7 +45,8 @@ const TodayDetails = () => {
         <button
           type="button"
           className="flex items-center rounded-md border py-1 px-2 uppercase"
-          onClick={() => navigate(-1)}>
+          onClick={() => navigate(-1)}
+        >
           <ArrowCircleLeftIcon className="h-6 w-6" />
           <span>BACK</span>
         </button>

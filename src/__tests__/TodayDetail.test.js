@@ -2,8 +2,8 @@ import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import TodayDetails from '../components/TodayDetails';
 import { render } from '@testing-library/react';
+import TodayDetails from '../components/TodayDetails';
 
 const initialState = {
   covidData: {

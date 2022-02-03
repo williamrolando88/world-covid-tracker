@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 // *Constants
 const baseURL = 'https://api.covid19tracking.narrativa.com';
@@ -51,7 +51,6 @@ const covidDataSlice = createSlice({
     },
     // Fetch data by country by day
     [fetchCountryDay.rejected]: (state) => {
-      current(state);
       state.countrySingleDay.status = 'rejected';
     },
     [fetchCountryDay.pending]: (state) => {
@@ -59,8 +58,7 @@ const covidDataSlice = createSlice({
     },
     [fetchCountryDay.fulfilled]: (state, action) => {
       state.countrySingleDay.status = 'fulfilled';
-      state.countrySingleDay.data =
-        action.payload.dates[state.date].countries[state.country];
+      state.countrySingleDay.data = action.payload.dates[state.date].countries[state.country];
     },
   },
 });

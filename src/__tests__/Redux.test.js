@@ -39,6 +39,6 @@ describe('Test asynchrouns redux action', () => {
   });
   test('should store today world data', async () => {
     store.dispatch(fetchToday(testData.date));
-    expect(store.getState().covidData.today.status).toBeTruthy;
+    expect(store.getState().covidData.today.status).toBeTruthy();
   });
 });

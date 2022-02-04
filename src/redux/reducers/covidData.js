@@ -58,7 +58,8 @@ const covidDataSlice = createSlice({
     },
     [fetchCountryDay.fulfilled]: (state, action) => {
       state.countrySingleDay.status = 'fulfilled';
-      state.countrySingleDay.data = action.payload.dates[state.date].countries[state.country];
+      state.countrySingleDay.data =
+        action.payload.dates[state.date].countries[state.country];
     },
   },
 });
@@ -66,5 +67,3 @@ const covidDataSlice = createSlice({
 export default covidDataSlice.reducer;
 
 export const { storeCountryDay } = covidDataSlice.actions;
-
-export const { storeCountryDayCaseReducer } = covidDataSlice.caseReducers;

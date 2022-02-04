@@ -33,19 +33,3 @@ describe('Should render', () => {
     expect(details).toMatchSnapshot();
   });
 });
-
-describe('should render the given values', () => {
-  test('should render total_confirmed', () => {
-    const { getByText } = render(
-      <Provider store={mockStore(initialState)}>
-        <BrowserRouter>
-          <TodayDetails />
-        </BrowserRouter>
-      </Provider>,
-    );
-    getByText('1.000');
-    getByText('2.000');
-    getByText('3.000');
-    getByText('4.000');
-  });
-});

@@ -5,8 +5,6 @@ import {
 } from '../redux/reducers/covidData';
 import store from '../redux/storeConfig';
 
-// const dispatch = useDispatch();
-
 describe('Test synchrouns redux action', () => {
   test('should store country and date', () => {
     const testData = { country: 'ecuador', date: '2022-02-01' };

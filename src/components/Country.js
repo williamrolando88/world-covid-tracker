@@ -40,7 +40,6 @@ Country.propTypes = {
   country: PropTypes.instanceOf(Object).isRequired,
   id: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
-  // onShowData: PropTypes.func.isRequired,
 };
 
 export default Country;

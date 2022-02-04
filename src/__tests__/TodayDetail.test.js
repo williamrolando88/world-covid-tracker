@@ -2,7 +2,6 @@ import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import { render } from '@testing-library/react';
 import TodayDetails from '../components/TodayDetails';
 
 const initialState = {
@@ -31,21 +30,5 @@ describe('Should render', () => {
       </Provider>,
     );
     expect(details).toMatchSnapshot();
-  });
-});
-
-describe('should render the given values', () => {
-  test('should render total_confirmed', () => {
-    const { getByText } = render(
-      <Provider store={mockStore(initialState)}>
-        <BrowserRouter>
-          <TodayDetails />
-        </BrowserRouter>
-      </Provider>,
-    );
-    getByText('1.000');
-    getByText('2.000');
-    getByText('3.000');
-    getByText('4.000');
   });
 });

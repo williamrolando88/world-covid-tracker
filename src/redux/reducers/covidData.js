@@ -66,5 +66,3 @@ const covidDataSlice = createSlice({
 export default covidDataSlice.reducer;
 
 export const { storeCountryDay } = covidDataSlice.actions;
-
-export const { storeCountryDayCaseReducer } = covidDataSlice.caseReducers;

@@ -11,7 +11,7 @@ This App was developed with the intention to keep informed with the latest infor
 
 Mobile version prefered
 
-![responsive-design](./screenshots/world-covid-tracker.jpg)
+![responsive-design](./screenshots/responsive-design.png)
 
 ### 📱 Mobile version
 
